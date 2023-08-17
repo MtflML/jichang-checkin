@@ -38,11 +38,17 @@ jobs:
         env:
           AMOUNT: ${{ secrets.AMOUNT }}
           SCKEY: ${{ secrets.SCKEY }}
+          URL1: ${{ secrets.URL1 }}  
+          EMAIL1: ${{ secrets.EMAIL1 }}  
+          PASSWD1: ${{ secrets.PASSWD1 }}  
+          URL2: ${{ secrets.URL2 }}  
+          EMAIL2: ${{ secrets.EMAIL2 }}  
+          PASSWD2: ${{ secrets.PASSWD2 }}  
         run: |
           for i in $(seq 1 AMOUNT): do
-            URL: $(secrets.${{ URL${{ i }} }})
-            EMAIL: $(secrets.${{ EMAIL${{ i }} }})
-            PASSWD: $(secrets.${{ PASSWD${{ i }} }})
+            URL: $(env.${{ URL$i }})
+            EMAIL: $(env.${{ EMAIL$i }})
+            PASSWD: $(env.${{ PASSWD$i }})
             python3 ./main.py
           done
           
