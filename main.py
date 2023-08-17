@@ -7,6 +7,9 @@ url = os.environ.get('URL')
 email = os.environ.get('EMAIL')
 # 配置用户名对应的密码 和上面的email对应上
 passwd = os.environ.get('PASSWD')
+print(url)  
+print(email)  
+print(passwd)
 # server酱
 SCKEY = os.environ.get('SCKEY')
 
