@@ -40,9 +40,9 @@ jobs:
           SCKEY: ${{ secrets.SCKEY }}
         run: |
           for i in $(seq 1 AMOUNT): do
-            URL: ${{ secrets.${{ URL${{ i }} }} }}
-            EMAIL: ${{ secrets.${{ EMAIL${{ i }} }} }}
-            PASSWD: ${{ secrets.${{ PASSWD${{ i }} }} }}
+            URL: $(secrets.${{ URL${{ i }} }})
+            EMAIL: $(secrets.${{ EMAIL${{ i }} }})
+            PASSWD: $(secrets.${{ PASSWD${{ i }} }})
             python3 ./main.py
           done
           
