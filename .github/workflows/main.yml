@@ -45,13 +45,11 @@ jobs:
           EMAIL2: ${{ secrets.EMAIL2 }}  
           PASSWD2: ${{ secrets.PASSWD2 }}  
         run: |
-          for i in $(seq 1 AMOUNT): do
-            a="URL$i"
-            b="EMAIL$i"
-            c="PASSWD$i"
-            URL=env.$a
-            EMAIL=env.$b
-            PASSWD=env.$c
-            python3 ./main.py "$URL" "$EMAIL" "$PASSWD"  
-          done
-          
+          URL=env.URL1
+          EMAIL=env.EMAIL1
+          PASSWD=env.PASSWD1
+          python3 ./main.py
+          URL=env.URL2
+          EMAIL=env.EMAIL2
+          PASSWD=env.PASSWD2
+          python3 ./main.py
