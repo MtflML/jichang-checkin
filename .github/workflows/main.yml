@@ -46,9 +46,9 @@ jobs:
           PASSWD2: ${{ secrets.PASSWD2 }}  
         run: |
           for i in $(seq 1 AMOUNT): do
-            a="URL${i}"
-            b="EMAIL${i}"
-            c="PASSWD${i}"
+            a="URL$i"
+            b="EMAIL$i"
+            c="PASSWD$i"
             URL=env.$a
             EMAIL=env.$b
             PASSWD=env.$c
