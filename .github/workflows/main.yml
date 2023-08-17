@@ -45,11 +45,11 @@ jobs:
           EMAIL2: ${{ secrets.EMAIL2 }}  
           PASSWD2: ${{ secrets.PASSWD2 }}  
         run: |
-          export URL=env.URL1
-          export EMAIL=env.EMAIL1
-          export PASSWD=env.PASSWD1
+          export URL=${{ env.URL1 }}
+          export EMAIL=${{ env.EMAIL1 }}
+          export PASSWD=${{ env.PASSWD1 }}
           python3 ./main.py
-          export URL=env.URL2
-          export EMAIL=env.EMAIL2
-          export PASSWD=env.PASSWD2
+          export URL=${{ env.URL2 }}
+          export EMAIL=${{ env.EMAIL2 }}
+          export PASSWD=${{ env.PASSWD2 }}
           python3 ./main.py
